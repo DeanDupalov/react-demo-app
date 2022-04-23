@@ -26,7 +26,12 @@ const WelcomeWord = () => {
                 <h1>Latest Games</h1>
 
                 {games.length > 0
-                    ? games.map(game => <LatestGameCard key={game._id} game={game} />)
+                    ? games.map(game =>
+                        <LatestGameCard
+                            key={game._id}
+                            game={game}
+                        />
+                    )
                     : <p className="no-articles">No games yet</p>
                 }
 

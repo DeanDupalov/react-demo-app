@@ -1,20 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom";
+import styles from './Header.module.css'
 
 
 export default function Header() {
 
     return (
         <header>
-            <h1><Link to="/" className="home">GamesPlay</Link></h1>
+            <h1><NavLink to="/" className="home">GamesPlay</NavLink></h1>
             <nav>
-                <Link to={"/catalog"}>All games</Link>
+                <NavLink activeClassName={styles['active-nav']} to={"/catalog"}>All games</NavLink>
                 <div id="user">
-                    <Link to="/create-game">Create Game</Link>
-                    <Link to="/logout">Logout</Link>
+                    <NavLink activeClassName={styles['active-nav']} to="/create-game">Create Game</NavLink>
+                    <NavLink activeClassName={styles['active-nav']} to="/logout">Logout</NavLink>
                 </div>
                 <div id="guest">
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <NavLink activeClassName={styles['active-nav']} to="/login">Login</NavLink>
+                    <NavLink activeClassName={styles['active-nav']} to="/register">Register</NavLink>
                 </div>
             </nav>
         </header>
